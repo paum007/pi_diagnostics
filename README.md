@@ -69,7 +69,7 @@ Then (assuming you're in the correct directory), just type into the terminal:
 
 8. GPU Memory: How much RAM is allocated to the graphics processor (GPU)
 
-    On headless systems (no desktop or GUI, common if you are using ssh), you can reduce the GPU memory to free up RAM for other tasks.
+    On headless systems (no desktop or GUI, common if you are using ssh), you can reduce how much memory the GPU uses to free up RAM for other tasks.
 
     This can be set via `raspi-config` or by editing `/boot/config.txt` (`gpu_mem=16` is common for headless use).
 
