@@ -2,6 +2,14 @@
 
 This file contains a script that writes all of the sensor data that the pi is recieving to a text file every ten seconds. This can be used as a debugging tool.
 
+# Contents
+
+- [Execute instructions](#how-to-execute)
+- [How to use](#how-to-use)
+- [What does the data mean](#data-contianed-in-the-log_data-file)
+
+# How to execute
+
 To be able to execute the file you first need to make it executable by typing the following command into the linux terminal:
 
 **Make sure you're in the same directory or use the full path.**
@@ -20,14 +28,24 @@ Then (assuming you're in the correct directory), just type into the terminal:
 ./pi_diagnostics.sh
 ```
 
-## Data contianed in the *log_data* file:
+# How to use
+
+You will need to input the way you receive the data. So you will need to enter either 1, 2 or 3 into the terminal.
+
+| Number        | Meaning                                             |
+| ------------- | --------------------------------------------------- |
+| **1**         | Write to the file **only**                          |
+| **2**         | Display in the terminal **only**                    |
+| **3**         | Both, write to the file and display in the terminal |
+
+# Data contianed in the *log_data* file:
 
 1. Timestamp: Displays the date and time.
 2. IP Address: Shows the IP address of the Pi. This is useful if you want to ssh into the Pi via Wi-Fi.
 3. CPU Temp: The temperature at the Central Processing Unit.
 4. CPU Usage: How busy the CPU is, usually as a percentage. It tells us if the CPU is being overworked or if there are any background processes hogging up system resources
 
-    Breakdown:
+    ### Breakdown:
 
     Field            | Meaning                           |
     | -------------- | --------------------------------- |
@@ -40,13 +58,13 @@ Then (assuming you're in the correct directory), just type into the terminal:
 
     You need to take into account that if the CPU is hot or undervolted, the Pi will throttle the clock down to reduce heat or power draw. 
 
-    **Lower frequency = lower performance**
+    ### **Lower frequency = lower performance**
 
 6. Throttle Status: Throttling is the deliberate slowing down of a process or resource usage. It can be caused by two main factors: overheating and under-voltage (fancier term for not enough power).
 
     An output can look like this: `throttled=0x0`
 
-    #### What it means:
+    ### What it means:
 
      Value           | Meaning                       |
     | -------------- |------------------------------ |
@@ -77,7 +95,7 @@ Then (assuming you're in the correct directory), just type into the terminal:
 
 10. Disk Space: This refers to the amount of storage available and used on the system files.
 
-    What each column means:
+    ### What each column means:
     Column           | Meaning                           |
     | -------------- | --------------------------------- |
     | **Filesystem** | The disk or partition name        |
