@@ -46,11 +46,11 @@ do
     log "Timestamp: $(date)" # Date
     log "IP Address: $(hostname -I)" # IP address
 
-    temp = $(vcgencmd measure_temp) # Variable that stores temperature
+    temp=$(vcgencmd measure_temp | grep -o '[0-9]*\.[0-9]*') # Variable that stores temperature
     log "CPU Temp: ${temp}ºC" # Showing stored temperature
 
     # An if statment that displays a warning if the temperature goes above 70ºC
-    if (( $(echo "$temp > 70.0" | bc -1))); then 
+    if [ "$(echo "$temp > 70.0" | bc -l)" = "1" ]; then 
       log "[WARNING] CPU temperature is too high!"
     fi
 
@@ -58,7 +58,7 @@ do
     log "CPU Usage: ${cpu_usage}%" # Showing stored CPU usage
 
     # An if statment that displays a warning if the CPU usage is above 80%
-    if (( $(echo "$cpu_usage > 80.0" | bc -1) )); then
+    if [ "$(echo "$cpu_usage > 80.0" | bc -l)" = "1" ]; then 
       log "[WARNING] CPU usage is above 80%!"
     fi
 
