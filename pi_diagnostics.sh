@@ -2,13 +2,26 @@
 
 log_data=~/pi_diagnostics/system_log.txt # Telling where to write the data to
 
-# This is to select the output mode
-echo "Select output mode: " 
-echo "[1] Write the data to file only"
-echo "[2] Display the data to the terminal only"
-echo "[3] Do both of the above options"
+while true; do
 
-read -p "Enter choice [1-3]: " output_mode
+  # This is to select the output mode
+  echo "Select output mode: " 
+  echo "[1] Write the data to file only"
+  echo "[2] Display the data to the terminal only"
+  echo "[3] Do both of the above options"
+
+  read -p "Enter choice [1-3]: " output_mode
+
+  # Checking if the input from the user is valid
+  if [[ "$output_mode" == "1" || "$output_mode" == "2" || "$output_mode" == "3" ]]; then 
+    break # Valid input
+
+  else
+    echo "Invalid input. Please enter 1, 2 or 3."
+
+  fi
+
+done
 
 # Based on teh answer, the commands will be executed as follows in teh switch case
 log() {
