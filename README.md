@@ -93,17 +93,7 @@ You will need to input the way you receive the data. So you will need to enter e
 
 9. Memory Usage: How much memory has been used and how much memory is free.                                  
 
-10. Disk Space: This refers to the amount of storage available and used on the system files.
-
-    ### What each column means:
-    Column           | Meaning                           |
-    | -------------- | --------------------------------- |
-    | **Filesystem** | The disk or partition name        |
-    | **Size**       | Total capacity                    |
-    | **Used**       | Space currently used              |
-    | **Avail**      | Space still available             |
-    | **Use%**       | Percentage of usage               |
-    | **Mounted on** | Where it is used in the file tree |
+10. Disk Space: This refers to the amount of storage available and used on the system files stored as a percentage.
 
 
 
